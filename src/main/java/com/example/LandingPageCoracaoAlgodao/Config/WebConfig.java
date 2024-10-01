@@ -14,7 +14,7 @@ public class WebConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**") // Permite todas as rotas
-                        .allowedOrigins("http://localhost:5173") // Permite requisições desse endereço específico (frontend)
+                        .allowedOrigins("http://localhost:5173", "coracaoalgodaolanding.vercel.app") // Permite requisições desse endereço específico (frontend)
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Métodos permitidos
                         .allowedHeaders("*") // Permite todos os headers
                         .allowCredentials(true); // Permite envio de cookies/autenticação
