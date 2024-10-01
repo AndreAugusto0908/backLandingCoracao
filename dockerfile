@@ -1,5 +1,5 @@
 # Use uma imagem base do Maven para compilar o projeto
-FROM maven:3.8.6-openjdk-17 AS build
+FROM maven:3.8.6-openjdk-21 AS build
 
 # Defina o diretório de trabalho dentro do contêiner
 WORKDIR /app
@@ -17,7 +17,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Etapa final: use uma imagem menor do OpenJDK para rodar a aplicação
-FROM openjdk:17-jdk-slim
+FROM openjdk:21-jdk-slim
 
 # Defina o diretório de trabalho no contêiner final
 WORKDIR /app
